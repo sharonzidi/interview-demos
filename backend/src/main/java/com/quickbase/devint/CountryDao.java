@@ -31,9 +31,8 @@ public class CountryDao {
 		return instance;
 	}
 
-	// GetCountryPopulations(): Add a method to query the db for population data by
-	// country
-	public List<Pair<String, Integer>> GetCountryPopulations() throws SQLException {
+	// getCountryPopulations queries the db for population data by country
+	public List<Pair<String, Integer>> getCountryPopulations() throws SQLException {
 		List<Pair<String, Integer>> output = new ArrayList<Pair<String, Integer>>();
 
 		// This query will join Country, State and City table and generate a table

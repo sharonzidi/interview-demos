@@ -21,7 +21,7 @@ public class Main {
 		CountryDao countryDao = CountryDao.getInstance();
 		try {
 			// call GetCountryPopulations function to get country population from Database
-			List<Pair<String, Integer>> countryPopulationFromDB = countryDao.GetCountryPopulations();
+			List<Pair<String, Integer>> countryPopulationFromDB = countryDao.getCountryPopulations();
 
 			// initialize a ConcreteStatService instance
 			// call GetCountryPopulations function to get country population from
