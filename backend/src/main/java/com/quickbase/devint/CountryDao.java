@@ -10,7 +10,7 @@ import org.apache.commons.lang3.tuple.ImmutablePair;
 /**
  * This CountryDao implementation provides methods
  *
- * Created by Zidi Xia on 04/09/2022
+ * Created by Zidi Xia on 04/09/2022 
  */
 public class CountryDao {
 	private DBManager dbm;
@@ -30,7 +30,7 @@ public class CountryDao {
 		return instance;
 	}
 	
-    // GetCountryPopulations Add a method to query the db for population data by country
+    // GetCountryPopulations(): Add a method to query the db for population data by country
 	public List<Pair<String, Integer>> GetCountryPopulations() throws SQLException{
 		List<Pair<String, Integer>> output = new ArrayList<Pair<String, Integer>>();
 
@@ -46,9 +46,12 @@ public class CountryDao {
 		Connection connection = null;
 		ResultSet results = null;
 		try {
+			// make connection with db
 			connection = this.dbm.getConnection();
 			Statement statement = connection.createStatement();
 			results = statement.executeQuery(query);
+			// iterate results
+			// add population from each country to output
 			while(results.next()) {
 				String countryName = results.getString("CountryName");
 				int population = results.getInt("Population");
